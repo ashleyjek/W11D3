@@ -22,7 +22,7 @@ export default function cartReducer(state = {}, action) {
                 id: action.cart.id,
                 count: (action.cart.count ||= 0) + 1
             };
-            debugger
+            // debugger
             return nextState;
         default:
             return nextState;
