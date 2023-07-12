@@ -1,8 +1,18 @@
 import { useState } from 'react';
 import Cart from './components/Cart';
 import ProduceList from './components/ProduceList';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { populateProduce } from './store/produce';
 
 function App() {
+  
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(populateProduce());
+  }, [dispatch]);
+
   const [showCart, setShowCart] = useState(false);
   
   return (
